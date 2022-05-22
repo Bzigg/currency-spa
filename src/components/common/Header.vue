@@ -1,30 +1,36 @@
 <template>
-    <header>
-            <nav>
-                <router-link to="/">Конвертер валюты</router-link>
-                <router-link to="/exchange-rates">Курсы валют</router-link>
-            </nav>
-        <router-view/>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <NavVue />
+                <SelectVue />
+            </div>
+        </div>
     </header>
 </template>
 
 <script>
-export default {
+import SelectVue from './helpers/Select.vue';
+import NavVue from './Nav.vue';
 
+export default {
+    components: {
+        NavVue,
+        SelectVue
+    }
 }
 </script>
 
 <style>
-    nav {
-    padding: 30px;
+    .container {
+        max-width: 1024px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    nav a {
-    font-weight: bold;
-    color: #2c3e50;
-    }
-
-    nav a.router-link-exact-active {
-    color: #42b983;
+    .header__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
     }
 </style>

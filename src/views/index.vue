@@ -1,13 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+    <section class="convert">
+        <form action="convert__form">
+            <input
+                type="text"
+                v-model="money"
+            >
+        </form>
+    </section>
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
-
+    data: () => ({
+        money: 0
+    })
 }
 </script>
